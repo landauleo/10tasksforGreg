@@ -3,10 +3,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class task7Test {
+public class Task7Test {
 
     @Test
-    public void getDenTest() {
-        assertEquals( 30, task7.getDen(5, 6),  0.1);
+    public void getDensityTest() {
+        assertEquals( 30, Task7.getDensity(5, 6),  0.1);
     }
 }

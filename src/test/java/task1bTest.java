@@ -3,10 +3,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class task1bTest {
+public class Task1bTest {
 
     @Test
-    public void getSumTest() {
-        assertEquals(3, task1b.getSum(1), 0.1);
+    public void getFunctionTest() {
+        assertEquals(3, Task1b.getFunction(1), 0.1);
     }
 }

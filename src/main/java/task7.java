@@ -2,7 +2,7 @@
 
 import java.util.Scanner;
 
-public class task7 {
+public class Task7 {
 
 
     public static void main(String[] args){
@@ -10,11 +10,11 @@ public class task7 {
         double v = s.nextInt();
         Scanner w = new Scanner(System.in);
         double m = w.nextInt();
-        double density = getDen(v,m);
+        double density = getDensity(v,m);
         System.out.println("density = " + density);
     }
 
-    public static double getDen(double v, double m) {
+    public static double getDensity(double v, double m) {
         return v*m;
     }
 

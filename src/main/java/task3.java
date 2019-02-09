@@ -3,17 +3,17 @@
 
 import java.util.Scanner;
 
-public class task3 {
+public class Task3 {
 
 
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
         double x = s.nextInt();
-        double per = getPer(x);
-        System.out.println("y = " + per);
+        double perimeter = getPerimeter(x);
+        System.out.println("y = " + perimeter);
     }
 
-    public static double getPer(double x) {
+    public static double getPerimeter(double x) {
         return 4*x;
     }
 

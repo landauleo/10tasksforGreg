@@ -5,17 +5,17 @@
 
 import java.util.Scanner;
 
-public class task4 {
+public class Task4 {
 
 
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
         double x = s.nextInt();
-        double sum = getDest(x);
-        System.out.println("Destination = " + sum);
+        double destination = getDestination(x);
+        System.out.println("Destination = " + destination);
     }
 
-    public static double getDest(double x) {
+    public static double getDestination(double x) {
         return Math.sqrt(x*(2*6350000 + x));
     }
 

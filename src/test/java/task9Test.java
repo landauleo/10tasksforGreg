@@ -3,10 +3,10 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 
-public class task9Test {
+public class Task9Test {
 
     @Test
-    public void getPerTest() {
-        assertEquals( 6, task9.getPer(1, 2),  0.1);
+    public void getPerimeterTest() {
+        assertEquals( 6, Task9.getPerimeter(1, 2),  0.1);
     }
 }

@@ -3,17 +3,17 @@
 
 import java.util.Scanner;
 
-public class task5 {
+public class Task5 {
 
 
     public static void main(String[] args){
         Scanner s = new Scanner(System.in);
         double r = s.nextInt();
-        double sum = getDia(r);
-        System.out.println("diameter = " + sum);
+        double diameter = getDiameter(r);
+        System.out.println("diameter = " + diameter);
     }
 
-    public static double getDia(double r) {
+    public static double getDiameter(double r) {
         return r*2;
     }
 

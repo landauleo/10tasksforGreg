@@ -3,24 +3,24 @@
 
 import java.util.Scanner;
 
-public class task10 {
+public class Task10 {
 
 
     public static void main(String[] args){
         Scanner a = new Scanner(System.in);
-        double o1 = a.nextInt();
+        double o1 = a.nextInt(); //основание 1
         Scanner b = new Scanner(System.in);
-        double o2 = b.nextInt();
+        double o2 = b.nextInt(); //основание 2
         Scanner c = new Scanner(System.in);
-        double h = c.nextInt();
-        double perimeter = getPer(o1, o2, h);
+        double h = c.nextInt(); // высота
+        double perimeter = getPerimeter(o1, o2, h);
         System.out.println("perimeter = " + perimeter);
     }
 
-    public static double getPer(double o1, double o2, double h) {
+    public static double getPerimeter(double o1, double o2, double h) {
         double katet = (o1 - o2)/2; //катет1 для треугольника внутри трапеции, катет2 - высота
-        double hypo = Math.sqrt(katet*katet)+Math.sqrt(h*h); //гипотенуза труегольника = боковая сторона р-б трапеции
-        return o1+o2+hypo;
+        double hypotenuse = Math.sqrt(katet*katet)+Math.sqrt(h*h); //гипотенуза труегольника = боковая сторона р-б трапеции
+        return o1+o2+hypotenuse;
     }
 
 }

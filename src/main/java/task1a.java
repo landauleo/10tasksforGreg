@@ -3,17 +3,17 @@
 
 import java.util.Scanner;
 
-public class task1a {
+public class Task1a {
 
 
         public static void main(String[] args){
             Scanner s = new Scanner(System.in);
             double x = s.nextInt();
-            double sum = getSum(x);
+            double sum = getFunction(x);
             System.out.println("y = " + sum);
         }
 
-        public static double getSum(double x) {
+        public static double getFunction(double x) {
             return 7*x*x-3*x+6;
         }
 
