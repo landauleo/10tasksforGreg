@@ -13,7 +13,7 @@ public class Task10 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String n = s.nextLine();
-        System.out.println("Result: "+getResult(n));
+        System.out.println("Vowels and consonant: "+getResult(n));
     }
     
     public static String getResult(String n) {
@@ -32,6 +32,6 @@ public class Task10 {
                 }
             }
         }
-        return "vowels: "+ v + "consonant: " + c;
+        return v + " " + c;
     }
 }
