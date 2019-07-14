@@ -10,28 +10,38 @@ import java.util.Set;
  */
 public class Task10 {
 
+    public static Set<Character> vowels = new HashSet<Character>();
+
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        String n = s.nextLine();
-        System.out.println("Vowels and consonant: "+getResult(n));
-    }
-    
-    public static String getResult(String n) {
-        int v = 0;
-        int c = 0;
-        Set<Character> vowels = new HashSet<Character>();
+        String string = s.nextLine();
         for (char ch : "aeiou".toCharArray()) {
             vowels.add(ch);
         }
-        for (char ch: n.toCharArray()) {
+        System.out.println("Vowels: " + getVowels(string) + " consonant: " + getConsonant(string));
+    }
+
+    public static int getVowels(String string) {
+        int v = 0;
+        for (char ch : string.toCharArray()) {
             if (Character.isLetter(ch)) {
                 if (vowels.contains(Character.toLowerCase(ch))) {
                     v++;
-                } else {
+                }
+            }
+        }
+        return v;
+    }
+
+    public static int getConsonant(String string) {
+        int c = 0;
+        for (char ch : string.toCharArray()) {
+            if (Character.isLetter(ch)) {
+                if (!vowels.contains(Character.toLowerCase(ch))) {
                     c++;
                 }
             }
         }
-        return v + " " + c;
+        return c;
     }
 }

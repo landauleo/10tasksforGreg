@@ -12,6 +12,6 @@ public class Task6Test {
 
     @Test
     public void getResult() {
-        assertEquals(3, Task6.getResult(3, 9), 0.1);
+        assertEquals(3, Task6.getGreatestCommonDivisor(3, 9), 0.1);
     }
 }

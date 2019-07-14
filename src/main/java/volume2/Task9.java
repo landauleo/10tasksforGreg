@@ -11,10 +11,10 @@ public class Task9 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String n = s.nextLine();
-        System.out.println("Result: "+getResult(n));
+        System.out.println("Result: " + getReversedString(n));
     }
-    
-    public static String getResult(String n) {
-       return new StringBuffer(n).reverse().toString();
+
+    public static String getReversedString(String n) {
+        return new StringBuffer(n).reverse().toString();
     }
 }

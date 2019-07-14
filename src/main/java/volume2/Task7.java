@@ -1,5 +1,6 @@
 package volume2;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 /**
@@ -10,14 +11,14 @@ public class Task7 {
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
-        int a = s.nextInt();
-        System.out.println("Result: "+getResult(a));
+        BigInteger a = s.nextBigInteger();
+        System.out.println("Result: " + getFactorial(a));
     }
-    
-    public static int getResult(int a) {
+
+    public static int getFactorial(BigInteger a) {
         int result = 1;
-        for (int i = 1; i <=a; i++){
-            result = result*i;
+        for (int i = 1; i <= a.intValue(); i++) {
+            result = result * i;
         }
         return result;
     }

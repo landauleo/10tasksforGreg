@@ -9,12 +9,12 @@ import java.util.Scanner;
 public class Task1 {
 
     public static void main(String[] args) {
-        Scanner s = new Scanner (System.in);
-        int x = s.nextInt();
-        System.out.println("Result: "+getResult(x));
+        Scanner s = new Scanner(System.in);
+        int number = s.nextInt();
+        System.out.println("Result: " + getSquareOfANumber(number));
     }
 
-    public static double getResult(int x) {
-        return x*x;
+    public static double getSquareOfANumber(int number) {
+        return number * number;
     }
 }

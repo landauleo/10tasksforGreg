@@ -12,6 +12,6 @@ public class Task3Test {
 
     @Test
     public void getResult() {
-        assertEquals(4, Task3.getResult(1, 3), 0.1);
+        assertEquals(4, Task3.getSum(1, 3), 0.1);
     }
 }

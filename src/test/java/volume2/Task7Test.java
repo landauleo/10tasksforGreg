@@ -2,6 +2,8 @@ package volume2;
 
 import org.junit.Test;
 
+import java.math.BigInteger;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -12,6 +14,6 @@ public class Task7Test {
 
     @Test
     public void getResult() {
-        assertEquals(120, Task7.getResult(5), 0.1);
+        assertEquals(120, Task7.getFactorial(BigInteger.valueOf(5)), 0.1);
     }
 }

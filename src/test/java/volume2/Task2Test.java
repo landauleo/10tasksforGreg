@@ -12,6 +12,6 @@ public class Task2Test {
 
     @Test
     public void getResult() {
-        assertEquals(9, Task2.getResult(-9), 0.1);
+        assertEquals(9, Task2.getTheAbsoluteValue(-9), 0.1);
     }
 }

@@ -9,12 +9,12 @@ import java.util.Scanner;
 public class Task2 {
 
     public static void main(String[] args) {
-        Scanner s = new Scanner (System.in);
-        int x = s.nextInt();
-        System.out.println("Result: "+getResult(x));
+        Scanner s = new Scanner(System.in);
+        int number = s.nextInt();
+        System.out.println("Result: " + getTheAbsoluteValue(number));
     }
 
-    public static double getResult(int x) {
-        return Math.abs(x);
+    public static double getTheAbsoluteValue(int number) {
+        return Math.abs(number);
     }
 }

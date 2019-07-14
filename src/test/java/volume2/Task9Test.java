@@ -12,6 +12,6 @@ public class Task9Test {
 
     @Test
     public void getResult() {
-        assertEquals("onvog", Task9.getResult("govno"));
+        assertEquals("onvog", Task9.getReversedString("govno"));
     }
 }

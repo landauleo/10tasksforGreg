@@ -12,6 +12,6 @@ public class Task5Test {
 
     @Test
     public void getResult() {
-        assertEquals(4, Task5.getResult(2, '^', 2), 0.1);
+        assertEquals(4, Task5.getOperationResult(2, '^', 2), 0.1);
     }
 }

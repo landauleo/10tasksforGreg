@@ -9,21 +9,27 @@ import java.util.Scanner;
 public class Task5 {
 
     public static void main(String[] args) {
-        Scanner s = new Scanner (System.in);
+        Scanner s = new Scanner(System.in);
         double x = s.nextInt();
         char operation = s.next().charAt(0);
         double y = s.nextInt();
-        System.out.println("Result: "+getResult(x, operation, y));
+        System.out.println("Result: " + getOperationResult(x, operation, y));
     }
 
-    public static double getResult(double x, char operation, double y) {
+    public static double getOperationResult(double x, char operation, double y) {
         switch (operation) {
-            case ('+'): return x+y;
-            case ('-'): return x-y;
-            case ('/'): return x/y;
-            case ('*'): return x*y;
-            case ('^'): return Math.pow(x, y);
-            default: return 0;
+            case ('+'):
+                return x + y;
+            case ('-'):
+                return x - y;
+            case ('/'):
+                return x / y;
+            case ('*'):
+                return x * y;
+            case ('^'):
+                return Math.pow(x, y);
+            default:
+                throw new UnsupportedOperationException("Ooops");
         }
     }
 }

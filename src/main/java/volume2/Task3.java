@@ -9,13 +9,13 @@ import java.util.Scanner;
 public class Task3 {
 
     public static void main(String[] args) {
-        Scanner s = new Scanner (System.in);
+        Scanner s = new Scanner(System.in);
         int x = s.nextInt();
         int y = s.nextInt();
-        System.out.println("Result: "+getResult(x, y));
+        System.out.println("Result: " + getSum(x, y));
     }
 
-    public static double getResult(int x, int y) {
-        return x+y;
+    public static double getSum(int x, int y) {
+        return x + y;
     }
 }

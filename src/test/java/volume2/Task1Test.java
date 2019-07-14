@@ -12,6 +12,6 @@ public class Task1Test {
 
     @Test
     public void getResult() {
-        assertEquals(9, Task1.getResult(3), 0.1);
+        assertEquals(9, Task1.getSquareOfANumber(3), 0.1);
     }
 }

@@ -12,10 +12,11 @@ public class Task6 {
         Scanner s = new Scanner(System.in);
         int a = s.nextInt();
         int b = s.nextInt();
-        System.out.println("Result: "+getResult(a, b));
+        System.out.println("Result: " + getGreatestCommonDivisor(a, b));
     }
 
-    public static int getResult(int a, int b) {
+    public static int getGreatestCommonDivisor(int a, int b) {
+        int greatestCommonDivisor = 0;
         while (a != 0 && b != 0) {
             if (a >= b) {
                 a = a % b;
@@ -24,10 +25,7 @@ public class Task6 {
             }
         }
 
-        if (a == 0) {
-            return b;
-        } else {
-            return a;
-        }
+        greatestCommonDivisor = (a == 0) ? b : a;
+        return greatestCommonDivisor;
     }
 }
