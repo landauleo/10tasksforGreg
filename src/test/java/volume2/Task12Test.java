@@ -12,7 +12,7 @@ public class Task12Test {
 
     @Test
     public void getResult() {
-        assertEquals(-8.0 + " и " + -56.0, Task12.getSolutionOfQuadraticEquation(4, 16, 7));
+        assertEquals(-8.0 + -56.0, Task12.getSolutionOfQuadraticEquation(4, 16, 7), 0.1);
     }
 }
 

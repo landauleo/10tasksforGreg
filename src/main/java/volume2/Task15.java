@@ -11,9 +11,10 @@ public class Task15 {
 
     public static void main(String[] args) {
         Random r = new Random();
-        int min = 10;
-        int max = 100;
-        int randomNumber = r.nextInt((max - min) + 1) + min;
+//        int min = 10;
+//        int max = 100;
+//        int randomNumber = r.nextInt((max - min) + 1) + min;
+        int randomNumber = 65; //это самое идиотское, что можно было придумать для теста
         System.out.println(randomNumber);
         System.out.println(guessNumber(randomNumber));
     }

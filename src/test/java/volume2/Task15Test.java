@@ -1,11 +1,18 @@
 package volume2;
 
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
 /**
  * User: Anna Nosova
  * Time: 2019-07-13 15:05
  */
 public class Task15Test {
 
-    //тут я ничего не сделала, потому что задаётся рандомное число
+    @Test
+    public void getResult() {
+        assertEquals("Ты угадал, умничка", Task15.guessNumber(65));
+    }
 }
 

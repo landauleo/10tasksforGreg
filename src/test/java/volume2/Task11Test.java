@@ -2,7 +2,7 @@ package volume2;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * User: Anna Nosova
@@ -12,7 +12,7 @@ public class Task11Test {
 
     @Test
     public void getResult() {
-        assertEquals("нет", Task11.getPowerOfTwo(6));
+        assertTrue(Task11.getPowerOfTwo(4));
     }
 }
 

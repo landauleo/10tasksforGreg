@@ -23,8 +23,7 @@ public class Task14 {
     }
 
     public static int getNumber(ArrayList<Integer> list, int num) {
-        if (list.contains(num)) {
-            return list.indexOf(num);
-        } else return -1;
+        int res = list.contains(num) == true ? list.indexOf(num) : -1;
+        return res;
     }
 }

@@ -1,5 +1,6 @@
 package volume2;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
@@ -10,14 +11,11 @@ import java.util.Set;
  */
 public class Task10 {
 
-    public static Set<Character> vowels = new HashSet<Character>();
+    public static Set<String> vowels = new HashSet<>(Arrays.asList("a", "i", "e", "o", "u"));
 
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String string = s.nextLine();
-        for (char ch : "aeiou".toCharArray()) {
-            vowels.add(ch);
-        }
         System.out.println("Vowels: " + getVowels(string) + " consonant: " + getConsonant(string));
     }
 

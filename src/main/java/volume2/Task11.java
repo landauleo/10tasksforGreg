@@ -11,13 +11,12 @@ public class Task11 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         int n = s.nextInt();
-        System.out.println("Является ли число степенью двойки: " + getPowerOfTwo(n));
+        String result = getPowerOfTwo(n) == true ? "Число является степенью двойки" :
+                "Число является степенью двойки";
     }
 
-    public static String getPowerOfTwo(int n) {
-        if ((n > 0) && ((n & (n - 1)) == 0)) //изящное решение, взятое из Cracking the Coding Interview
-            return "да";
-        else
-            return "нет";
+    public static boolean getPowerOfTwo(int n) {
+        //изящное решение, взятое из Cracking the Coding Interview
+        return (n > 0) && ((n & (n - 1)) == 0);
     }
 }

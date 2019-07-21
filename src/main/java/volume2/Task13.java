@@ -18,10 +18,10 @@ public class Task13 {
             arr[i] = num;
         }
 
-        System.out.println("Так выглядит отсортированный массив: " + getSortedArray(arr));
+        System.out.println("Так выглядит отсортированный массив: " + Arrays.toString(getSortedArray(arr)));
     }
 
-    public static String getSortedArray(int[] arr) {
+    public static int[] getSortedArray(int[] arr) {
         for (int i = arr.length - 1; i > 0; i--) {
             for (int j = 0; j < i; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -31,6 +31,6 @@ public class Task13 {
                 }
             }
         }
-        return Arrays.toString(arr);
+        return arr;
     }
 }
