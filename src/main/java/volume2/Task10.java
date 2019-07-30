@@ -16,10 +16,10 @@ public class Task10 {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         String string = s.nextLine();
-        System.out.println("Vowels: " + getVowels(string) + " consonant: " + getConsonant(string));
+        System.out.println("Vowels: " + getVowelsNumber(string) + " consonant: " + getConsonantNumber(string));
     }
 
-    public static int getVowels(String string) {
+    public static int getVowelsNumber(String string) {
         int v = 0;
         for (char ch : string.toCharArray()) {
             if (Character.isLetter(ch)) {
@@ -31,7 +31,7 @@ public class Task10 {
         return v;
     }
 
-    public static int getConsonant(String string) {
+    public static int getConsonantNumber(String string) {
         int c = 0;
         for (char ch : string.toCharArray()) {
             if (Character.isLetter(ch)) {

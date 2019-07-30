@@ -7,6 +7,9 @@
     <groupId>TasksForGreg</groupId>
     <artifactId>TasksForGreg</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <properties>
+        
+    </properties>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

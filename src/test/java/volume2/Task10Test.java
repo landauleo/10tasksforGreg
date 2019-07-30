@@ -12,6 +12,6 @@ public class Task10Test {
 
     @Test
     public void getResult() {
-        assertEquals(5+5, Task10.getConsonant("annanosova"), Task10.getVowels("annanosova"));
+        assertEquals(5+5, Task10.getConsonantNumber("annanosova"), Task10.getVowelsNumber("annanosova"));
     }
 }

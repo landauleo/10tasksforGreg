@@ -12,7 +12,7 @@ public class Task11Test {
 
     @Test
     public void getResult() {
-        assertTrue(Task11.getPowerOfTwo(4));
+        assertTrue(Task11.isPowerOfTwo(4));
     }
 }
 
