@@ -6,20 +6,17 @@ Implement an algorithm to determine if a string has all unique characters. What 
 public class Chapter1Task1 {
 
     public static void main(String[] args) {
-        System.out.println("Uniqueness of chars: " + areCharsUnique("abrakadabra"));
+        System.out.println("Uniqueness of chars: " + areCharsUnique("asdfghjkl"));
     }
 
     public static boolean areCharsUnique(String string) {
-        if (string.length() > 128) return false; //превышает кол-во уникальных знаков
-
-        boolean [] uniqie = new boolean[128]; //показатель уникальности знака
-        for (int i = 0; i < string.length(); i++) {
-            int index = string.charAt(i);
-            if(uniqie[index]) { //если есть такой же знак (по дефолту false)
-                return false;
+        for(int i = 0; i < string.length() - 1; i++) {
+            for (int j = i + 1; j < string.length(); j++) {
+                    if (string.toCharArray()[i] == string.toCharArray()[j]) {
+                        return false;
+                    }
+                }
             }
-            uniqie[index] = true;
-        }
         return true;
-    }
+        }
 }
