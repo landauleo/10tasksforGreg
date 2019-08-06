@@ -9,6 +9,6 @@ public class Chapter1Task2Test {
 
     @Test
     public void getPermutation() {
-        assertTrue(isStringPermutation("твойкодговно", "говнотвойкод"));
+        assertTrue(isStringPermutation("говно", "гооно"));
     }
 }
