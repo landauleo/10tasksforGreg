@@ -1,10 +1,12 @@
 package volume3;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Chapter1Task2 {
     public static void main(String[] args) {
-        System.out.println("One string is a permutation of another: " + isStringPermutationV2("твойкодговно", "говнотвойкод"));
+        System.out.println("One string is a permutation of another: " + isStringPermutationV1("твойкодгdвно", "говнотвойкод"));
     }
 
 
@@ -18,17 +20,33 @@ public class Chapter1Task2 {
 
     }
 
-    public static boolean isStringPermutationV2(String str1, String str2) {
+
+    static boolean isStringPermutationV2(String str1, String str2) {
         char[] sortedStr1 = str1.toCharArray();
         char[] sortedStr2 = str2.toCharArray();
+        Map<Character,Integer> counter=new HashMap<Character,Integer>();
 
-        return Arrays.equals(customSort(sortedStr1), customSort(sortedStr2));
+        for (int i = 0; i < sortedStr1.length; i++) {
+            char ch = sortedStr1[i];
+            if(counter.containsKey(ch)){
+                counter.put(ch, counter.get(ch)+1);
+            }
+            else
+            {
+                counter.put(ch, 1);
+            }
+        }
 
-    }
-
-    public static char[] customSort (char[] arr) {
-        Arrays.sort(arr);
-        return arr;
+        for (char c : sortedStr2) {
+            if (counter.containsKey(c)) {
+                Integer newValue = counter.get(c) - 1;
+                counter.put(c, newValue);
+            }
+            if (counter.get(c).compareTo(0) == 0) {
+                counter.remove(c, counter.get(c));
+            }
+        }
+        return counter.isEmpty();
     }
 }
 
