@@ -24,15 +24,12 @@ public class Chapter1Task2 {
     static boolean isStringPermutationV2(String str1, String str2) {
         char[] sortedStr1 = str1.toCharArray();
         char[] sortedStr2 = str2.toCharArray();
-        Map<Character,Integer> counter=new HashMap<Character,Integer>();
+        Map<Character, Integer> counter = new HashMap<Character, Integer>();
 
-        for (int i = 0; i < sortedStr1.length; i++) {
-            char ch = sortedStr1[i];
-            if(counter.containsKey(ch)){
-                counter.put(ch, counter.get(ch)+1);
-            }
-            else
-            {
+        for (char ch : sortedStr1) {
+            if (counter.containsKey(ch)) {
+                counter.put(ch, counter.get(ch) + 1);
+            } else {
                 counter.put(ch, 1);
             }
         }
