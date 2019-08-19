@@ -48,5 +48,6 @@ public class Chapter1Task1 {
         }
 
         return true;
-    }
+    } //time- и space- complexity O(n)
+
 }
