@@ -4,6 +4,8 @@ Implement an algorithm to determine if a string has all unique characters. What 
  */
 
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Chapter1Task1 {
 
@@ -27,10 +29,24 @@ public class Chapter1Task1 {
 
         Arrays.sort(chars);
         for (int i = 0; i < (chars.length - 1); i++) {
-            if (chars[i] == chars[i+1]) {
+            if (chars[i] == chars[i + 1]) {
                 return false;
             }
         }
+        return true;
+    }
+
+    public static boolean areCharsUnique3(String string) {
+        Set<Character> set = new HashSet<>();
+        char[] arr = string.toCharArray();
+        for (int i = 0; i < string.length(); i++) {
+            if (set.contains(arr[i])) {
+                return false;
+            } else {
+                set.add(arr[i]);
+            }
+        }
+
         return true;
     }
 }
