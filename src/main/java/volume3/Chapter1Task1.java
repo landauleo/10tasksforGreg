@@ -22,7 +22,7 @@ public class Chapter1Task1 {
             }
         }
         return true;
-    }
+    } //time- и space- complexity O(n^2) -> 2 loops
 
     public static boolean areCharsUnique2(String string) {
         char[] chars = string.toCharArray();
@@ -34,7 +34,7 @@ public class Chapter1Task1 {
             }
         }
         return true;
-    }
+    } //complexity: O(n) time and O(1) space
 
     public static boolean areCharsUnique3(String string) {
         Set<Character> set = new HashSet<>();
@@ -48,6 +48,6 @@ public class Chapter1Task1 {
         }
 
         return true;
-    } //time- и space- complexity O(n)
+    } //complexity: space O(1) -> method does not allocate any extra space and time 0(n) -> 1 for-loop
 
 }
