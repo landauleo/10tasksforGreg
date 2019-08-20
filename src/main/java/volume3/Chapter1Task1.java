@@ -22,7 +22,7 @@ public class Chapter1Task1 {
             }
         }
         return true;
-    } //time- и space- complexity O(n^2) -> 2 loops
+    } //time-complexity O(n^2) -> 2 loops give us O(N*N), space-complexity O(1) -> extra space is not dependent on the size of the input size itself
 
     public static boolean areCharsUnique2(String string) {
         char[] chars = string.toCharArray();
@@ -34,7 +34,7 @@ public class Chapter1Task1 {
             }
         }
         return true;
-    } //complexity: O(n) time and O(1) space
+    } //time-complexity O(n) -> 1 loop, space-complexity O(1) -> extra space is not dependent on the size of the input size itself
 
     public static boolean areCharsUnique3(String string) {
         Set<Character> set = new HashSet<>();
