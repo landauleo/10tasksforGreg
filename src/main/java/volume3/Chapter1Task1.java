@@ -22,7 +22,7 @@ public class Chapter1Task1 {
             }
         }
         return true;
-    } //time-complexity O(n^2) -> 2 loops give us O(N*N), space-complexity O(1) -> extra space is not dependent on the size of the input size itself
+    } //time-complexity O(n^2) worst, O(n^2) average, O(1) best, space-complexity O(1) -> extra space is not dependent on the size of the input size itself
 
     public static boolean areCharsUnique2(String string) {
         char[] chars = string.toCharArray();
@@ -34,7 +34,7 @@ public class Chapter1Task1 {
             }
         }
         return true;
-    } //time-complexity O(n) -> 1 loop, space-complexity O(1) -> extra space is not dependent on the size of the input size itself
+    } //time-complexity O(n) worst, O(n*log(n)) average, O(1) best ; space-complexity O(1) -> extra space is not dependent on the size of the input size itself
 
     public static boolean areCharsUnique3(String string) {
         Set<Character> set = new HashSet<>();
@@ -48,6 +48,6 @@ public class Chapter1Task1 {
         }
 
         return true;
-    } //complexity: space O(1) -> method does not allocate any extra space and time 0(n) -> 1 for-loop
+    } //time-complexity O(n) worst, O(n) average, O(1) best ; space-complexity O(1) -> method does not allocate any extra space
 
 }
