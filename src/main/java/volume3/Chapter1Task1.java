@@ -49,5 +49,5 @@ public class Chapter1Task1 {
 
         return true;
     } //time-complexity O(n) worst, O(n) average, O(1) best ; space-complexity O(1) -> method does not allocate any extra space
-
+//not really sure about complexities
 }
