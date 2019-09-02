@@ -42,6 +42,7 @@ public class Chapter1Task5 {
         return ((counter.size() == 1) && (removalIndex == 0)) || ((counter.isEmpty()) && (removalIndex == -1)) || ((counter.size() == 1) && (removalIndex == -1));
     }
 }
+//time-complexity O(2n) average, O(n) best, O(1) worst, space-complexity O(1) -> extra space is not dependent on the size of the input size itself
 
 
 
