@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Chapter1Task5 {
     public static void main(String[] args) {
-        System.out.println("One string is a permutation of another: " + areStringsOneEdit("pale", "pales"));
+        System.out.println("One string is an edit of another: " + areStringsOneEdit("pale", "pales"));
     }
 
 
