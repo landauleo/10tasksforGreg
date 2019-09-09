@@ -4,9 +4,15 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.NoSuchElementException;
 
 public class CustomList implements List {
 
+    public Integer[] numbers;
+
+    public int currentIndex;
+
+    public int lastIndex;
 
     @Override
     public int size() {
@@ -15,31 +21,62 @@ public class CustomList implements List {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return isEmpty(numbers);
     }
 
-    public boolean isEmpty(List list) {
-        return list.size() == 0;
+    public boolean isEmpty(Integer[] numbers) {
+        return numbers.length == 0;
     }
 
     @Override
     public boolean contains(Object o) {
+        for (Integer number : numbers) {
+            if (number.equals(o)) {
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public Iterator iterator() {
-        return null;
+        return new Iterator() {
+
+            @Override
+            public boolean hasNext() {
+                return numbers[currentIndex]< numbers[lastIndex];
+            }
+
+            @Override
+            public Object next() {
+                if (this.hasNext()) {
+                    return new Object[currentIndex++];
+                }
+                throw new NoSuchElementException();
+            }
+        }
+                ;
     }
 
     @Override
     public Object[] toArray() {
-        return new Object[0];
+        Integer[] arr = new Integer[numbers.length];
+        currentIndex = 0;
+        for (Integer number : numbers) {
+            arr[currentIndex] = number;
+            currentIndex++;
+        }
+        return arr;
     }
 
     @Override
     public boolean add(Object o) {
-        return false;
+//        if(currentIndex == lastIndex) {
+//            Integer[] numbers;
+//
+//        }
+//        numbers[currentIndex] = (Integer) o;
+//        return numbers[currentIndex];
     }
 
     @Override
