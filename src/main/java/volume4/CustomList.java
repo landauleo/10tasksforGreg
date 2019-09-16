@@ -1,37 +1,40 @@
 package volume4;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
-import java.util.NoSuchElementException;
+
+import org.apache.commons.lang.ArrayUtils;
+
 
 public class CustomList implements List {
 
-    public Integer[] numbers;
+    private Object[] objects;
 
-    public int currentIndex;
+    private int currentIndex;
 
-    public int lastIndex;
+    private int lastIndex;
+
+    private Object[] newObj;
 
     @Override
     public int size() {
-        return 0;
+        return ArrayUtils.getLength(objects);
     }
 
     @Override
     public boolean isEmpty() {
-        return isEmpty(numbers);
-    }
-
-    public boolean isEmpty(Integer[] numbers) {
-        return numbers.length == 0;
+        return objects.length == 0;
     }
 
     @Override
     public boolean contains(Object o) {
-        for (Integer number : numbers) {
-            if (number.equals(o)) {
+        for (Object object : objects) {
+            if (object.equals(o)) {
                 return true;
             }
         }
@@ -44,15 +47,12 @@ public class CustomList implements List {
 
             @Override
             public boolean hasNext() {
-                return numbers[currentIndex]< numbers[lastIndex];
+                return currentIndex < lastIndex;
             }
 
             @Override
             public Object next() {
-                if (this.hasNext()) {
-                    return new Object[currentIndex++];
-                }
-                throw new NoSuchElementException();
+                return objects[currentIndex++];
             }
         }
                 ;
@@ -60,108 +60,210 @@ public class CustomList implements List {
 
     @Override
     public Object[] toArray() {
-        Integer[] arr = new Integer[numbers.length];
+        newObj = new Object[objects.length];
         currentIndex = 0;
-        for (Integer number : numbers) {
-            arr[currentIndex] = number;
+        for (Object object : objects) {
+            newObj[currentIndex] = object;
             currentIndex++;
         }
-        return arr;
+        return newObj;
     }
 
     @Override
     public boolean add(Object o) {
-//        if(currentIndex == lastIndex) {
-//            Integer[] numbers;
-//
-//        }
-//        numbers[currentIndex] = (Integer) o;
-//        return numbers[currentIndex];
+        if (lastIndex == objects.length - 1) {
+            newObj = new Object[(int) (objects.length * 1.5)];
+
+            newObj = ArrayUtils.add(newObj, o);
+            newObj = ArrayUtils.add(newObj, objects);
+
+        } else {
+            objects[currentIndex++] = o;
+        }
+        return true;
     }
 
     @Override
     public boolean remove(Object o) {
+        currentIndex = 0;
+        while (currentIndex < objects.length) {
+            if (objects[currentIndex] == o) {
+                objects = ArrayUtils.remove(objects, currentIndex);
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public boolean addAll(Collection c) {
-        return false;
+        newObj = ArrayUtils.addAll(objects.clone(), c.toArray());
+        return true;
     }
 
     @Override
     public boolean addAll(int index, Collection c) {
-        return false;
+        if (index == 0) {
+            return false;
+        }
+        currentIndex = 0;
+        Object next = null;
+        for (Iterator iterator = c.iterator(); iterator.
+                hasNext(); ) {
+            if (currentIndex >= index) {
+                if (!add((next))) {
+                    return false;
+                }
+            }
+            currentIndex++;
+            next = iterator.next();
+        }
+        return add(next);
     }
 
     @Override
     public void clear() {
+        for (Object object : objects) {
+            object = null;
+        }
 
     }
 
     @Override
     public Object get(int index) {
+        for (currentIndex = 0; currentIndex < objects.length; currentIndex++) {
+            if (currentIndex == index) {
+                return objects[currentIndex];
+            }
+        }
         return null;
     }
 
     @Override
     public Object set(int index, Object element) {
-        return null;
+        if (lastIndex == objects.length - 1) {
+            newObj = new Object[(int) (objects.length * 1.5)];
+            for (currentIndex = 0; currentIndex <= objects.length; currentIndex++) {
+                if (currentIndex == index) {
+                    newObj[currentIndex] = element;
+                } else {
+                    newObj[currentIndex] = objects[currentIndex];
+                }
+            }
+        } else {
+            for (currentIndex = 0; currentIndex <= objects.length; currentIndex++) {
+                if (currentIndex == index) {
+                    objects[currentIndex] = element;
+                }
+            }
+        }
+
+        return element;
     }
 
     @Override
     public void add(int index, Object element) {
+        if (lastIndex == objects.length - 1) {
+            newObj = new Object[(int) (objects.length * 1.5)];
+            currentIndex = 0;
+            for (int currentIndex1 = currentIndex; currentIndex <= objects.length; currentIndex++, currentIndex1++) {
+                if (currentIndex == index) {
+                    newObj[currentIndex] = element;
+                    currentIndex1--;
+                }
+            }
+        } else {
+            currentIndex = 0;
+            for (int currentIndex1 = currentIndex; currentIndex <= objects.length; currentIndex++, currentIndex1++) {
+                if (currentIndex == index) {
+                    objects[currentIndex] = element;
+                    currentIndex1--;
+                }
+            }
+        }
 
     }
 
     @Override
     public Object remove(int index) {
-        return null;
+        Object removed = objects[index];
+        ArrayUtils.remove(objects, index);
+        return removed;
     }
 
     @Override
     public int indexOf(Object o) {
-        return 0;
+        return ArrayUtils.indexOf(objects, o);
     }
 
     @Override
     public int lastIndexOf(Object o) {
+        for(currentIndex = objects.length-1; currentIndex >= 0; currentIndex--) {
+            if(objects[currentIndex] == o) {
+                return currentIndex;
+            }
+        }
         return 0;
     }
 
     @Override
     public ListIterator listIterator() {
-        return null;
+        ListIterator<Object> itr;
+        LinkedList<Object> l = new LinkedList<>();
+        itr = l.listIterator(0);
+        return (ListIterator) itr.next();
     }
 
     @Override
     public ListIterator listIterator(int index) {
-        return null;
+        ListIterator<Object> itr;
+        LinkedList<Object> l = new LinkedList<>();
+        itr = l.listIterator(index);
+        return (ListIterator) itr.next();
     }
 
     @Override
     public List subList(int fromIndex, int toIndex) {
-        return null;
+        List list = new ArrayList();
+        for(currentIndex = fromIndex; currentIndex <= toIndex; currentIndex++) {
+            list.add(objects[currentIndex]);
+        }
+        return list;
     }
 
     @Override
     public boolean retainAll(Collection c) {
-        return false;
+        for(Object object: objects) {
+            if(!c.contains(object)) {
+                ArrayUtils.removeElement(objects, object);
+            }
+        }
+        return true;
     }
 
     @Override
     public boolean removeAll(Collection c) {
-        return false;
+        for(Object object: objects) {
+            if(c.contains(object)) {
+                ArrayUtils.removeElement(objects, object);
+            }
+        }
+        return true;
     }
 
     @Override
     public boolean containsAll(Collection c) {
-        return false;
+        for(Object object: objects) {
+            if(!c.contains(object)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
     public Object[] toArray(Object[] a) {
-        return new Object[0];
+        return Arrays.copyOf(a, a.length);
     }
 
 }
