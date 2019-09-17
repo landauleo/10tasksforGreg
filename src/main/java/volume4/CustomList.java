@@ -13,6 +13,10 @@ import org.apache.commons.lang.ArrayUtils;
 
 public class CustomList implements List {
 
+    public CustomList(int initialCapacity) {
+        objects = new Object[initialCapacity];
+    }
+
     private Object[] objects;
 
     private int currentIndex;
